@@ -15,10 +15,11 @@ document.getElementById("cryptoSubmit").addEventListener("click", (e)=>{
     if (match !== -1) displayCoin(match);
     else {
       let sugBar = document.getElementById("sug_bar_list");
+      sugBar.style.visibility = "visible";
       let smallerArray = [];
       for (let i = 0; i < 10 && i < matchArray.length; i++) smallerArray.push(matchArray[i]);
-      sugBar.hidden = false;
       while (sugBar.firstChild) sugBar.removeChild(sugBar.childNodes[0]);
+      sugBar.appendChild(document.createTextNode("Suggestions:"));
       for (coin of smallerArray) {
         let newItem = document.createElement("li");
         newItem.textContent = coin.name;
@@ -29,7 +30,12 @@ document.getElementById("cryptoSubmit").addEventListener("click", (e)=>{
 })
 
 function displayCoin(coin) {
-  console.log("MATCH");
+  console.log(coin);
   let sugBar = document.getElementById("sug_bar_list");
-  sugBar.hidden = true;
+  sugBar.style.visibility = "collapse";
+  while (sugBar.firstChild) sugBar.removeChild(sugBar.childNodes[0]);
+
+  let info = document.createElement("div");
+  info.className = "coin_info";
+  document.getElementById("page")
 }
