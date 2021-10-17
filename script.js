@@ -15,10 +15,9 @@ document.getElementById("cryptoSubmit").addEventListener("click", (e)=>{
     if (match !== -1) displayCoin(match);
     else {
       let sugBar = document.getElementById("sug_bar_list");
-      sugBar.style.visibility = "visible";
       let smallerArray = [];
       for (let i = 0; i < 10 && i < matchArray.length; i++) smallerArray.push(matchArray[i]);
-      while (sugBar.firstChild) sugBar.removeChild(sugBar.childNodes[0]);
+      clearInfo("visible");
       sugBar.appendChild(document.createTextNode("Suggestions:"));
       for (coin of smallerArray) {
         let newItem = document.createElement("li");
@@ -33,7 +32,7 @@ function clearInfo(showVal) {
   let sugBar = document.getElementById("sug_bar_list");
   sugBar.style.visibility = showVal;
   while (sugBar.firstChild) sugBar.removeChild(sugBar.childNodes[0]);
-  
+
   let check = document.getElementsByClassName("coin_info");
   if (check.length !== 0) {
     while (check.firstChild) check.removeChild(sugBar.childNodes[0]);
@@ -71,7 +70,7 @@ function displayCoin(coin) {
   temp = document.createElement("h3");
   let rank = (coinRank !== 0 ? coin.rank : "Not Ranked");
   temp.appendChild(document.createTextNode("Rank of Coin: " + rank));
-  if (!coin.active) temp.appendChild(document.createTextNode(" (Inactive Coin)"));
+  if (!coin.is_active) temp.appendChild(document.createTextNode(" (Inactive Coin)"));
   coinRank.appendChild(temp);
   info.appendChild(coinRank);
 }
