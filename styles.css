@@ -78,7 +78,11 @@ h4 {
 }
 
 #sug_bar_list li {
-  margin-left: 15
+  margin-left: 15px;
+}
+
+#githubLink p {
+  margin-left: 10px;
 }
 
 sug_bar li {
