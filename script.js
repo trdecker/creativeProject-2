@@ -29,16 +29,22 @@ document.getElementById("cryptoSubmit").addEventListener("click", (e)=>{
   });
 })
 
-function displayCoin(coin) {
-  console.log(coin);
+function clearInfo(showVal) {
   let sugBar = document.getElementById("sug_bar_list");
-  sugBar.style.visibility = "collapse";
+  sugBar.style.visibility = showVal;
   while (sugBar.firstChild) sugBar.removeChild(sugBar.childNodes[0]);
+  
   let check = document.getElementsByClassName("coin_info");
   if (check.length !== 0) {
     while (check.firstChild) check.removeChild(sugBar.childNodes[0]);
     document.getElementsByClassName("page")[0].removeChild(check[0]);
   }
+}
+
+function displayCoin(coin) {
+  console.log(coin);
+  let sugBar = document.getElementById("sug_bar_list");
+  clearInfo("collapse");
 
   let info = document.createElement("div");
   info.className = "coin_info";
