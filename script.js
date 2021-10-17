@@ -34,6 +34,11 @@ function displayCoin(coin) {
   let sugBar = document.getElementById("sug_bar_list");
   sugBar.style.visibility = "collapse";
   while (sugBar.firstChild) sugBar.removeChild(sugBar.childNodes[0]);
+  let check = document.getElementsByClassName("coin_info");
+  if (check.length !== 0) {
+    while (check.firstChild) check.removeChild(sugBar.childNodes[0]);
+    document.getElementsByClassName("page")[0].removeChild(check[0]);
+  }
 
   let info = document.createElement("div");
   info.className = "coin_info";
@@ -54,4 +59,13 @@ function displayCoin(coin) {
   temp.appendChild(document.createTextNode("Coin Type: " + coin.type));
   coinStats.appendChild(temp);
   info.appendChild(coinStats);
+
+  let coinRank = document.createElement("div");
+  coinRank.className = "coin_rank";
+  temp = document.createElement("h3");
+  let rank = (coinRank !== 0 ? coin.rank : "Not Ranked");
+  temp.appendChild(document.createTextNode("Rank of Coin: " + rank));
+  if (!coin.active) temp.appendChild(document.createTextNode(" (Inactive Coin)"));
+  coinRank.appendChild(temp);
+  info.appendChild(coinRank);
 }
