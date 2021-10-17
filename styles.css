@@ -45,7 +45,17 @@ background {
 
 }
 
+h3 {
+  font-weight: normal;
+  font-size: 20px;
+  padding-left: 200px;
+}
 
+.coin_info {
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: -10px;
+}
 
 #githubLink {
   display: flex;
@@ -58,5 +68,15 @@ background {
 
 
 #sug_bar_list {
+  margin-top: 15px;
   visibility: hidden;
+  margin-left: -10px;
+}
+
+#sug_bar_list li {
+  margin-left: 15
+}
+
+a p {
+  margin-left: 10px;
 }
