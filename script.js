@@ -18,7 +18,11 @@ document.getElementById("cryptoSubmit").addEventListener("click", (e)=>{
       let smallerArray = [];
       for (let i = 0; i < 10 && i < matchArray.length; i++) smallerArray.push(matchArray[i]);
       clearInfo("visible");
-      sugBar.appendChild(document.createTextNode("Suggestions:"));
+      let suggWord = document.createElement("h4");
+      suggWord.appendChild(document.createTextNode("Suggestions:"));
+      suggWord.style.fontWeight = "bold";
+      sugBar.appendChild(suggWord);
+      console.log(sugBar.childNodes[0]);
       for (coin of smallerArray) {
         let newItem = document.createElement("li");
         newItem.textContent = coin.name;
