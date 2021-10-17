@@ -48,7 +48,11 @@ background {
 h3 {
   font-weight: normal;
   font-size: 20px;
-  padding-left: 200px;
+  padding-left: 15px;
+}
+
+h4 {
+  padding-left: -15px;
 }
 
 .coin_info {
@@ -70,13 +74,13 @@ h3 {
 #sug_bar_list {
   margin-top: 15px;
   visibility: hidden;
-  margin-left: -10px;
+  padding-left: 15px;
 }
 
 #sug_bar_list li {
   margin-left: 15
 }
 
-a p {
+sug_bar li {
   margin-left: 10px;
 }
