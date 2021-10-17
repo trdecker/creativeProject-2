@@ -68,7 +68,7 @@ function displayCoin(coin) {
   let coinRank = document.createElement("div");
   coinRank.className = "coin_rank";
   temp = document.createElement("h3");
-  let rank = (coinRank !== 0 ? coin.rank : "Not Ranked");
+  let rank = (coin.rank !== 0 ? coin.rank : "Not Ranked");
   temp.appendChild(document.createTextNode("Rank of Coin: " + rank));
   if (!coin.is_active) temp.appendChild(document.createTextNode(" (Inactive Coin)"));
   coinRank.appendChild(temp);
