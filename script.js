@@ -24,6 +24,8 @@ document.getElementById("cryptoSubmit").addEventListener("click", (e)=>{
         newItem.textContent = coin.name;
         sugBar.appendChild(newItem);
       }
+
+      if (smallerArray.length === 0) sugBar.childNodes[0].textContent = "Sorry, No Sugestions Found";
     }
   });
 })
