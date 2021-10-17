@@ -37,5 +37,21 @@ function displayCoin(coin) {
 
   let info = document.createElement("div");
   info.className = "coin_info";
-  document.getElementById("page")
+  document.getElementsByClassName("page")[0].appendChild(info);
+
+  info.appendChild(document.createTextNode(coin.name));
+  let coinStats = document.createElement("div");
+  coinStats.className = "coin_stats";
+  let temp = document.createElement("h3");
+  temp.appendChild(document.createTextNode("Coin symbol: " + coin.symbol));
+  coinStats.appendChild(temp);
+
+  temp = document.createElement("h3");
+  temp.appendChild(document.createTextNode("Coin ID: " + coin.id));
+  coinStats.appendChild(temp);
+
+  temp = document.createElement("h3");
+  temp.appendChild(document.createTextNode("Coin Type: " + coin.type));
+  coinStats.appendChild(temp);
+  info.appendChild(coinStats);
 }
